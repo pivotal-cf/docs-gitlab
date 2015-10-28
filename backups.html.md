@@ -2,8 +2,22 @@
 title: GitLab
 ---
 
-TODO: Add documentation explaining how to SSH into the GitLab VMs / deployment and manually run a backup using the provided rake tasks.
+# Backups
 
-Should cover how to configure the S3 details with links to the GitLab docs.
-Required screenshots etc as well
-List what is actually backed up (e.g. data from NFS, config, MySQL? Redis?)
+Backups of the configuration and repository data are not currently automated.
+
+You can execute the included rake tasks manually in order to backup your configuration and data by following these steps.
+
+## SSH Into the GitLab VMs
+
+Follow the instructions [here](http://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#ssh) on how to SSH into your OpsManager VM.
+
+Once SSH'd in identify the GitLab deployment by running `bosh deployments` and look for the deployment with `gitlab-ee` in the name.
+
+You can then target that deployment by following [these steps](http://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#product)
+
+Next SSH into the `gitlab-ee` job by following [these steps](http://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#ssh). You can choose index `0` of the `gitlab-ee` job to connect to.
+
+## Execute Backups
+
+Once you connected via SSH, follow the instructions detailed [here](http://doc.gitlab.com/ee/raketasks/backup_restore.html#create-a-backup-of-the-gitlab-system) on how to execute the backup and upload it to a remote location such as S3. 
