@@ -8,11 +8,11 @@ This is documentation for the [GitLab service for Pivotal Cloud Foundry](https:/
 
 <dl>
 <dt>Current GitLab for PCF Details</dt>
-<dd><strong>Version</strong>: 0.1.0 </dd>
-<dd><strong>Release Date</strong>: xx September 2015</dd>
+<dd><strong>Version</strong>: 0.1.1 </dd>
+<dd><strong>Release Date</strong>: 28th October 2015</dd>
 <dd><strong>Software component version</strong>: GitLab Enterprise x.x</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.5.x, 1.4.x</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.5.x, 1.4.x</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: 1.6.x, 1.5.x, 1.4.x</dd>
+<dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.6.x, 1.5.x, 1.4.x</dd>
 <dd><strong>vSphere support?</strong> Yes</dd>
 <dd><strong>AWS support?</strong> Yes</dd>
 <dd><strong>OpenStack support?</strong> Yes</dd>
@@ -28,9 +28,9 @@ Consider the following compatibility information before upgrading GitLab for Piv
   <th>Supported Upgrades from Imported GitLab Installation</th>
 </tr>
 <tr>
-  <th>1.5.x and 1.4.x</th>
+  <th>1.6.x, 1.5.x and 1.4.x</th>
   <td><ul>
-      <li>From 0.1.x to 0.1.x</li>
+      <li>n/a</li>
     </ul>
   </td>
 </tr>
@@ -51,7 +51,8 @@ The following ports & ranges are used in this service:
 
 * Destination port 80 access to the GitLab VMs from the PCF Router
 * Destination port 22 access to the GitLab VMs from outside of the PCF Network
-* Destination port xx for NFS access
+* Destination port 2222 for SSH access to the `gitlab-ee` VM
+* Outbound port 2049 for access to an external NFS Server
 
 ## Feedback
 
