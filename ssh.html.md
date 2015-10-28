@@ -11,3 +11,5 @@ In the future when this is changed to a URL, the `git remote` details on any clo
 Detail the host key considerations as well, and link to documentation on the GitLab website on how to add a SSH key to your user profile to connect. 
 
 Add a note explaining this is on the roadmap to be integrated into PCF in the future so this manual workaround is not required.
+
+Port 2222
