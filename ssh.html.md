@@ -2,14 +2,30 @@
 title: GitLab
 ---
 
-TODO: Add documentation explaining how to `git push` via SSH.
+The GitLab Enterprise tile supports SSH access directly to GitLab nodes. All nodes share a SSH host-key that is generated securely by the tile.
 
-Showing how to identify the IP of the first GitLab VM from OpsManager and which ports should be opened on the firewall.
+GitLab users will need to add an SSH key to their account by following the guide on [gitlab.com](http://doc.gitlab.com/ee/ssh/README.html) before they can acess git functionality via SSH.
 
-In the future when this is changed to a URL, the `git remote` details on any cloned repo's will need to be updated. List the command required to do this.
+## Direct access
 
-Detail the host key considerations as well, and link to documentation on the GitLab website on how to add a SSH key to your user profile to connect. 
+Identity a GitLab node IP address via the resources tab in the GitLab tile.
 
-Add a note explaining this is on the roadmap to be integrated into PCF in the future so this manual workaround is not required.
+![Image of OpsManager GitLab Resources](resources.jpeg)
 
-Port 2222
+If you have a firewall in place you will need to add an exception for the external IP address(s) that will be accessing the GitLab node via SSH. GitLab nodes listen on port 2222 for inbound git SSH traffic.
+
+### Example useage
+
+`git clone ssh://git@gitlab-node-ip:2222/user/repo.git`
+
+## Access via Load Balancer
+
+If you want to provide a more standard git experience you can manually setup and configure an external load balancer to point to a given GitLab node. This should route traffic from port 22 to port 2222 on the GitLab node. You can then point a dns record at the load balancer.
+
+### Example useage
+
+`git clone git@yourloadbalancer.com:user/repo.git`
+
+# Roadmap
+
+In the future we plan to use the Cloud Foundry TCP router (currently under development) to a provide a URL for SSH access. The `git remote` details on any cloned repo's will need to be updated.
