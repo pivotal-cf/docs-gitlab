@@ -4,6 +4,7 @@ title: GitLab
 
 # Dependencies
 For the GitLab product to work, it has some dependencies which must be satisfied.
+
 * MySQL
 * Redis
 * NFS
