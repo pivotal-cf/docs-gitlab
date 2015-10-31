@@ -2,7 +2,7 @@
 title: GitLab
 ---
 
-This is documentation for the [GitLab service for Pivotal Cloud Foundry](https://network.pivotal.io/products/gitlab).
+This is documentation for the [GitLab service for Pivotal Cloud Foundry](https://network.pivotal.io/products/p-gitlab).
 
 ## Product snapshot
 
