@@ -14,4 +14,4 @@ Features included in this release:
 * Uses external MySQL & Redis services
 * Provides a built in NFS server which is used centrally to store all data - this is not HA
 * Alternatively configure an external NFS server for HA
-* Tile is upgradeble between versions
+* Tile is upgradable between versions

@@ -2,7 +2,7 @@
 title: GitLab
 ---
 
-# Resource requirements for GitLab for PCF
+# Resource requirements for GitLab for Pivotal Cloud Foundry&reg;
 These are the default resource and IP requirements for installing the tile
 <table border="1" class="nice">
 	<tr>

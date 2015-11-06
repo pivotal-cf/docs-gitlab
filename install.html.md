@@ -4,7 +4,7 @@ title: GitLab
 
 ## Installation
 
-To install GitLab for PCF, follow the procedure for installing Pivotal Ops Manager tiles:
+To install GitLab for [Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/pivotal-cf) (PCF), follow the procedure for installing Pivotal Ops Manager tiles:
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/p-gitlab).
 1. Upload the product file to your Ops Manager installation.

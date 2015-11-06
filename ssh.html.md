@@ -4,7 +4,7 @@ title: GitLab
 
 The GitLab Enterprise tile supports SSH access directly to GitLab nodes. All nodes share a SSH host-key that is generated securely by the tile.
 
-GitLab users will need to add an SSH key to their account by following the guide on [gitlab.com](http://doc.gitlab.com/ee/ssh/README.html) before they can acess git functionality via SSH.
+GitLab users will need to add an SSH key to their account by following the guide on [gitlab.com](http://doc.gitlab.com/ee/ssh/README.html) before they can access git functionality via SSH.
 
 ## Direct access
 
@@ -14,7 +14,7 @@ Identity a GitLab node IP address via the resources tab in the GitLab tile.
 
 If you have a firewall in place you will need to add an exception for the external IP address(s) that will be accessing the GitLab node via SSH. GitLab nodes listen on port 2222 for inbound git SSH traffic.
 
-### Example useage
+### Example usage
 
 `git clone ssh://git@gitlab-node-ip:2222/user/repo.git`
 
@@ -22,7 +22,7 @@ If you have a firewall in place you will need to add an exception for the extern
 
 If you want to provide a more standard git experience you can manually setup and configure an external load balancer to point to a given GitLab node. This should route traffic from port 22 to port 2222 on the GitLab node. You can then point a dns record at the load balancer.
 
-### Example useage
+### Example usage
 
 `git clone git@yourloadbalancer.com:user/repo.git`
 

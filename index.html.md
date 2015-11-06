@@ -2,12 +2,12 @@
 title: GitLab
 ---
 
-This is documentation for the [GitLab service for Pivotal Cloud Foundry](https://network.pivotal.io/products/p-gitlab).
+This is documentation for the [GitLab service for Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-gitlab).
 
 ## Product snapshot
 
 <dl>
-<dt>Current GitLab for PCF Details</dt>
+<dt>Current GitLab for <a href="https://network.pivotal.io/products/pivotal-cf">Pivotal Cloud Foundry&reg;</a> Details</dt>
 <dd><strong>Version</strong>: 0.1.1 </dd>
 <dd><strong>Release Date</strong>: 28th October 2015</dd>
 <dd><strong>Software component version</strong>: GitLab Enterprise x.x</dd>
@@ -20,7 +20,7 @@ This is documentation for the [GitLab service for Pivotal Cloud Foundry](https:/
 
 ## Upgrading to the Latest Version
 
-Consider the following compatibility information before upgrading GitLab for Pivotal Cloud Foundry.
+Consider the following compatibility information before upgrading GitLab for Pivotal Cloud Foundry&reg;.
 
 <table border="1" class="nice">
 <tr>
@@ -56,7 +56,7 @@ The following ports & ranges are used in this service:
 
 ## Feedback
 
-Please provide any bugs, feature requests, or questions to [the Pivotal Cloud Foundry Feedback list](mailto:pivotal-cf-feedback@pivotal.io).
+Please provide any bugs, feature requests, or questions to [the Pivotal Cloud Foundry&reg; Feedback list](mailto:pivotal-cf-feedback@pivotal.io).
 
 ## Further Reading
 
