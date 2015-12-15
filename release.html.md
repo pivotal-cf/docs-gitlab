@@ -2,7 +2,7 @@
 title: GitLab
 ---
 
-Release notes for [GitLab for Pivotal Cloud Foundry](https://network.pivotal.io/products/gitlab)
+Release notes for [GitLab for Pivotal Cloud Foundry](https://network.pivotal.io/products/p-gitlab)
 
 ### 1.0.1
 **Release Date: 14th December 2015**
