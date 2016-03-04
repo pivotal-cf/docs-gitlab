@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 This is documentation for the [GitLab service for Pivotal Cloud Foundry&reg;](https://network.pivotal.io/products/p-gitlab).

@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 ## Installation
@@ -26,4 +27,4 @@ To add new users to the product:
 1. Click on `Create new user`
 1. Populate all of the required details
 1. Check e-mail for confirmation mail
-1. Confirm e-mail address and log in. 
+1. Confirm e-mail address and log in.

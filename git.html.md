@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 # Connecting via Git

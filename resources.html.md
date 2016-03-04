@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 # Resource requirements for GitLab for Pivotal Cloud Foundry&reg;

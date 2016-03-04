@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 The GitLab Enterprise tile supports SSH access directly to GitLab nodes. All nodes share a SSH host-key that is generated securely by the tile.

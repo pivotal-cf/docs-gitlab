@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 # Upgrades
@@ -20,7 +21,7 @@ By default the GitLab VMs are deployed in a highly available configuration. Duri
 
 The built in NFS server is a single VM, so when this is being deployed you will experience downtime. We suggest you configure an external NFS server which is HA to avoid this downtime.
 
-The length of the downtime depends on whether there is a stemcell update to replace the operating system image or whether the existing VM can simply have the GitLab software updated. Stemcells updates incur additional downtime while the IaaS creates the new VM while updates without a stemcell update are faster. 
+The length of the downtime depends on whether there is a stemcell update to replace the operating system image or whether the existing VM can simply have the GitLab software updated. Stemcells updates incur additional downtime while the IaaS creates the new VM while updates without a stemcell update are faster.
 
 Ops Manager ensures the instances are updated with the new packages and any configuration changes are applied automatically.
 

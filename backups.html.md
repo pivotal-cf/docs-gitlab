@@ -1,5 +1,6 @@
 ---
 title: GitLab
+owner: London Services
 ---
 
 # Backups
@@ -20,4 +21,4 @@ Next SSH into the `gitlab-ee` job by following [these steps](http://docs.pivotal
 
 ## Execute Backups
 
-Once you connected via SSH, follow the instructions detailed [here](http://doc.gitlab.com/ee/raketasks/backup_restore.html#create-a-backup-of-the-gitlab-system) on how to execute the backup and upload it to a remote location such as S3. 
+Once you connected via SSH, follow the instructions detailed [here](http://doc.gitlab.com/ee/raketasks/backup_restore.html#create-a-backup-of-the-gitlab-system) on how to execute the backup and upload it to a remote location such as S3.
