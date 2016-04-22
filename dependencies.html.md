@@ -20,7 +20,8 @@ We have tested using the [MySQL for PCF](https://network.pivotal.io/products/p-m
 
 However any MySQL compatible database should work.
 
-The required fields to be populated are:
+The required fields to be populated are the following:
+
 * Database name - defaulted to `gitlabhq_production`
 * Hostname - this can be a URL or IP address
 * DB port
@@ -38,9 +39,10 @@ We recommend that you use a Redis database that is Highly Available to remove an
 
 We have tested using the [Redis for PCF](https://network.pivotal.io/products/p-redis) tile as well as the hosted [Redis Labs](https://console.run.pivotal.io/marketplace/rediscloud) offering on http://run.pivotal.io.
 
-However any Redis database should work.
+However, any Redis database should work.
 
-The required fields to be populated are:
+The required fields to be populated are the following:
+
 * Redis Hostname - this can be a URL or IP address
 * Redis port - defaults to 6379
 * Redis password
@@ -63,9 +65,10 @@ This is a single node NFS server, so it is a single point of failure in the stac
 You may wish to use an external NFS server instead of the built in product.
 This may be because you have an external solution which is Highly Available or wish to use a hardware product instead of software.
 
-The required fields to be populated are:
+The required fields to be populated are the following:
+
 * Hostname - can be an IP address or hostname
-* Remote path - if not specified it defaults to the root path on the share
+* Remote path - if not specified, defaults to the root path on the share
 
 ![Image of OpsManager NFS Configuration](nfs.jpeg)
 
@@ -74,7 +77,8 @@ An SMTP server is required in order to send e-mails to users. This is required i
 
 We did not use the same settings as configured on the Elastic Runtime tile to give flexibility, in case a separate SMTP server is required to be used.
 
-The required fields to be populated are:
+The required fields to be populated are the following:
+
 * Mail server address - IP address or Hostname
 * Mail server port - default is 25 for unsecured SMTP
 * Credentials

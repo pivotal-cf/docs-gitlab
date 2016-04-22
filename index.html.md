@@ -30,9 +30,7 @@ Consider the following compatibility information before upgrading GitLab for Piv
 </tr>
 <tr>
   <th>1.6.x, 1.5.x and 1.4.x</th>
-  <td><ul>
-      <li>From 0.1.1 BETA to 1.0.1</li>
-    </ul>
+  <td>From 0.1.1 BETA to 1.0.1
   </td>
 </tr>
 </table>

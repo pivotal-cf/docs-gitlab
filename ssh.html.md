@@ -3,7 +3,7 @@ title: GitLab
 owner: London Services
 ---
 
-The GitLab Enterprise tile supports SSH access directly to GitLab nodes. All nodes share a SSH host-key that is generated securely by the tile.
+The GitLab Enterprise tile supports SSH access directly to GitLab nodes. All nodes share an SSH host-key that is generated securely by the tile.
 
 GitLab users will need to add an SSH key to their account by following the guide on [gitlab.com](http://doc.gitlab.com/ee/ssh/README.html) before they can access git functionality via SSH.
 
@@ -21,7 +21,7 @@ If you have a firewall in place you will need to add an exception for the extern
 
 ## Access via Load Balancer
 
-If you want to provide a more standard git experience you can manually setup and configure an external load balancer to point to a given GitLab node. This should route traffic from port 22 to port 2222 on the GitLab node. You can then point a dns record at the load balancer.
+If you want to provide a more standard git experience you can manually set up and configure an external load balancer to point to a given GitLab node. This should route traffic from port 22 to port 2222 on the GitLab node. You can then point a DNS record at the load balancer.
 
 ### Example usage
 

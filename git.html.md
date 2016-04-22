@@ -10,7 +10,7 @@ Once a user has configured their repositories they'll be presented with the deta
 
 You can perform all git actions against your repositories using the registered URL.
 
-By default this is `https://gitlab.apps.my-pcf.com`
+By default, this is `https://gitlab.apps.my-pcf.com`.
 
 ## SSH
 

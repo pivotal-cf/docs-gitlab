@@ -4,7 +4,7 @@ owner: London Services
 ---
 
 # Resource requirements for GitLab for Pivotal Cloud Foundry&reg;
-These are the default resource and IP requirements for installing the tile
+These are the default resource and IP requirements for installing the tile.
 <table border="1" class="nice">
 	<tr>
 		<th>Product</th>
@@ -42,5 +42,5 @@ These are the default resource and IP requirements for installing the tile
 </table>
 
 #### Notes:
-* The `file-server` instance count cannot be increased
-* The `gitlab-ee` instance count can be increased to scale out horizontally
+* The `file-server` instance count cannot be increased.
+* The `gitlab-ee` instance count can be increased to scale out horizontally.
