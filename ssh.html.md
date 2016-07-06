@@ -25,7 +25,7 @@ If you want to provide a more standard git experience you can manually set up an
 
 ### Example usage
 
-`git clone git@yourloadbalancer.com:user/repo.git`
+`git clone git@yourloadbalancer.example.com:user/repo.git`
 
 # Roadmap
 

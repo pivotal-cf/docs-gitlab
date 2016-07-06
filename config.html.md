@@ -9,7 +9,7 @@ The following properties can be configured for the GitLab tile
 
 * Route Name - Defaults to `gitlab`. This route is registered against the apps domain configured on the runtime tile. The URL is used to access the GitLab web interface. Only HTTPS connections are accepted, and attempts to connect over HTTP are automatically redirected to HTTPS.
 
-* Emails From - The address to be used when sending e-mail from GitLab, such as `gitlab-no-reply@my-pcf.com`.
+* Emails From - The address to be used when sending e-mail from GitLab, such as `gitlab-no-reply@my-pcf.example.com`.
 
 * Emails Reply-To - The reply to address to be used
 

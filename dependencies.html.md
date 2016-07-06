@@ -82,7 +82,7 @@ The required fields to be populated are the following:
 * Mail server address - IP address or Hostname
 * Mail server port - default is 25 for unsecured SMTP
 * Credentials
-* Mail server domain - the domain from which the e-mails are sent, e.g. "my-pcf.com"
+* Mail server domain - the domain from which the e-mails are sent, e.g. "my-pcf.example.com"
 * Mail server authentication
 * Mail server TLS - if enabled ensure you change the mail server port, typically this would be 465
 
