@@ -10,7 +10,7 @@ This is documentation for the [GitLab service for Pivotal Cloud Foundry](https:/
 <dl>
 <dt>Current GitLab for <a href="https://network.pivotal.io/products/pivotal-cf">Pivotal Cloud Foundry</a> Details</dt>
 <dd><strong>Version</strong>: 1.1.0 </dd>
-<dd><strong>Release Date</strong>: 3rd Augutst 2016</dd>
+<dd><strong>Release Date</strong>: 3rd August 2016</dd>
 <dd><strong>Software component version</strong>: GitLab Enterprise 8.5.12</dd>
 <dd><strong>Compatible Ops Manager Version(s)</strong>: 1.6.x, 1.5.x</dd>
 <dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.6.x, 1.5.x</dd>
