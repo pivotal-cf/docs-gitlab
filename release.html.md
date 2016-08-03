@@ -5,6 +5,15 @@ owner: London Services
 
 Release notes for [GitLab for Pivotal Cloud Foundry](https://network.pivotal.io/products/p-gitlab)
 
+### 1.1.0
+**Release Date: 3rd August 2016**
+
+Features included in this release:
+
+* Generally Available release
+* Upgradeable from the public release 1.1.0
+* GitLab Enterprise 8.5.12
+
 ### 1.0.1
 **Release Date: 14th December 2015**
 
