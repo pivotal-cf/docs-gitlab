@@ -9,9 +9,9 @@ This is documentation for the [GitLab service for Pivotal Cloud Foundry](https:/
 
 <dl>
 <dt>Current GitLab for <a href="https://network.pivotal.io/products/pivotal-cf">Pivotal Cloud Foundry</a> Details</dt>
-<dd><strong>Version</strong>: 1.0.1 </dd>
-<dd><strong>Release Date</strong>: 14th December 2015</dd>
-<dd><strong>Software component version</strong>: GitLab Enterprise 7.14.3</dd>
+<dd><strong>Version</strong>: 1.1.0 </dd>
+<dd><strong>Release Date</strong>: 3rd Augutst 2016</dd>
+<dd><strong>Software component version</strong>: GitLab Enterprise 8.5.12</dd>
 <dd><strong>Compatible Ops Manager Version(s)</strong>: 1.6.x, 1.5.x</dd>
 <dd><strong>Compatible Elastic Runtime Version(s)</strong>: 1.6.x, 1.5.x</dd>
 <dd><strong>vSphere support?</strong> Yes</dd>
@@ -30,7 +30,7 @@ Consider the following compatibility information before upgrading GitLab for Piv
 </tr>
 <tr>
   <th>1.6.x, 1.5.x and 1.4.x</th>
-  <td>From 0.1.1 BETA to 1.0.1
+  <td>From 1.0.1 to 1.1.0
   </td>
 </tr>
 </table>
