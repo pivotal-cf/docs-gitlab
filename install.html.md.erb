@@ -11,13 +11,22 @@ To install GitLab for [Pivotal Cloud Foundry](https://network.pivotal.io/product
 1. Upload the product file to your Ops Manager installation.
 1. Click **Add** next to the uploaded product description in the Available Products view to add this product to your staging area.
 1. Click the newly added tile to review any configurable options.
-1. Populate all of the mandatory configuration options for MySQL, Redis, SMTP, etc.
+1. Populate all of the mandatory configuration options for GitLab, MySQL, Redis, SMTP, etc.
 1. Click **Apply Changes** to install the service.
 1. Once deployed, visit the URL for the web dashboard. By default, this is `https://gitlab.apps.my-pcf.com`.
-1. The first time, log in with the following information:
-  1. Username of `root`
-  1. Password of `5iveL!fe`
-  1. Configure a new password for the root account, and keep this safe.
+1. Your first login experience will depend on your configured settings at time of deployment:
+    1. If this is a new installation
+    1. If you configured the `Initial root password` option
+         1. Username: root
+         1. Password: your entry in `Initial root password`
+    1.  If you did not configure the `Initial root password` option
+         1. When you direct your browser to the installation, you will be directed to a password reset page for the root user.
+         1. Configure a new password for the root account, and keep this safe.
+         1. You will be redirected to log in
+            1. Username: root
+            1. Password: your newly configured password from the previous step.
+    1.  If this installation is an upgrade, re-use your previos username and password.
+
 
 ## Adding new users
 
