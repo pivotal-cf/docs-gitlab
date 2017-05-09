@@ -14,15 +14,15 @@ The following table provides version and version-support information about GitLa
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v1.1.7</td>
+        <td>v1.2.0</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>21 March, 2017</td>
+        <td>8 May, 2017</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>GitLab Enterprise Edition v8.17.4</td>
+        <td>GitLab Enterprise Edition v9.0.7</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
@@ -49,7 +49,7 @@ Consider the following compatibility information before upgrading GitLab for Piv
 </tr>
 <tr>
   <th> 1.8.x, 1.7.x, 1.6.x</th>
-  <td>From 1.1.3 to 1.1.6
+  <td>From 1.1.3 to 1.1.7
   </td>
 </tr>
 </table>
@@ -69,8 +69,10 @@ The following ports & ranges are used in this service:
 
 * Destination port 80 access to the GitLab VMs from the PCF Router
 * Destination port 22 access to the GitLab VMs from outside of the PCF Network
-* Destination port 2222 for SSH access to the `gitlab-ee` VM
+* Destination port 2222 for SSH access to the `gitlab-ee` instances
 * Outbound port 2049 for access to an external NFS Server
+* Outbound ports for SMTP (one of 25, 587, 465)
+* Outbound ports for LDAP if configured (one of 389 or 636)
 
 ## Feedback
 

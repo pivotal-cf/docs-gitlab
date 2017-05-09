@@ -11,7 +11,7 @@ To install GitLab for [Pivotal Cloud Foundry](https://network.pivotal.io/product
 1. Upload the product file to your Ops Manager installation.
 1. Click **Add** next to the uploaded product description in the Available Products view to add this product to your staging area.
 1. Click the newly added tile to review any configurable options.
-1. Populate all of the mandatory configuration options for GitLab, MySQL, Redis, SMTP, etc.
+1. Populate all of the mandatory configuration options for GitLab, MySQL, Redis, SMTP, LDAP, etc.
 1. Click **Apply Changes** to install the service.
 1. Once deployed, visit the URL for the web dashboard. By default, this is `https://gitlab.apps.my-pcf.com`.
 1. Your first login experience will depend on your configured settings at time of deployment:
@@ -37,3 +37,10 @@ To add new users to the product:
 1. Populate all of the required details.
 1. Check email for confirmation mail.
 1. Confirm email address and log in.
+
+Adding users from LDAP:
+
+If you have configured LDAP for GitLab, the ability of users to log into to GitLab
+via LDAP credentials will be controlled by your settings there. Please see the
+[documentation for LDAP in GitLab EE](https://docs.gitlab.com/ee/administration/auth/ldap.html)
+in addition to the [LDAP settings for the Tile](https://docs.pivotal.io/partners/gitlab/ldap.html).

@@ -1,0 +1,114 @@
+---
+title: GitLab
+owner: London Services
+---
+
+# LDAP Configuration
+
+Configuring the GitLab Tile for us with LDAP is handled through the `LDAP` tab in the GitLab Tile's settings.  This series of settings is separate from the rest of the GitLab settings due to the complexity and size of the configuration.
+
+There are three primary points:
+
+1. It is possible to enable and disable LDAP, while retaining your settings.
+1. If you provide _no_ LDAP servers, the system will automatically disable LDAP integration.
+1. You may configure any number of LDAP servers, handled through the `LDAP Server(s)` collection.
+
+You may used any [GitLab-compatible LDAP provider](https://docs.gitlab.com/ee/administration/auth/ldap.html#ldap), including Microsoft Active Directory, Apple Open Directory, Open LDAP, and 389 Server. For the purposes of this document, we will simply say 'LDAP server'.
+
+When LDAP is enabled and configured successfully, you will have additional forms on the Sign-In page. Below, is an example, where the `label` field of the LDAP server setting is `LDAP`
+
+![Image of Sign-in page with LDAP](ldap-signin.png)
+
+## Settings
+
+All settings presented here should abide to the documentation present in the [GitLab EE LDAP configuration documentation](https://docs.gitlab.com/ee/administration/auth/ldap.html) in terms of format, with the exception of lists which should be entered in comma separated lists.
+
+### Enable
+![Image of LDAP Configuration Enable](ldap-enable.png)
+
+This is the primary flag for enable and disable of the LDAP configuration for LDAP within GitLab. If this checkbox is unchecked, LDAP will be disabled regardless of servers being configured in the collection below it. If this checkbox is checked, and no servers are provided in the collection below it, this setting will be ignored.
+
+*You may disable LDAP without removing the servers provided in the collection.*
+
+### LDAP Server(s)
+![LDAP Servers](ldap-servers.png)
+
+LDAP Server(s) is a collection of servers configurations. To add an item, click the small `Add` button to the right. To remove an item, click the small trash icon beside the item.
+
+Each *Server* item will have 24 fields, of which 12 are required. Of the 12 required fields, 9 are pre-filled with defaults. At minimum, the `Host`, `Bind DN`, and `Base DN` fields will need to be populated.
+
+![LDAP Servers item](ldap-servers-item.png)
+
+#### Label (required)
+This is the label that will be used for display and logging purposes. This will be the label presented on the Sign-in page, as well as used for referencing multiple items from this configuration page in the future. This value defaults to `main`, and in the sample Sign-in form pictured above, we have labelled it `LDAP`. *You can not have two items with the same value in* `Label`
+
+#### Host (required)
+This should be the IP address for Fully-Qualified Domain Name of your LDAP server. This much be reachable for communication from your deployed Tile, please ensure that firewall rules allow this.
+
+#### Port (required, default)
+The port to which GitLab should connect to your LDAP server. This is most commonly `389` or `636`. The default provided is `389`
+
+#### UID (required)
+Provide the LDAP attribute that will map to a user's login. In Active Directory, this is commonly `sAMAccountName`, which is provided by default.
+
+#### Method (required, default)
+This dropdown provides selection of the connection method to the LDAP server. GitLab allows for `Plain`, `SSL`, or `TLS`. Please see the [Limitations](https://docs.gitlab.com/ee/administration/auth/ldap.html#limitations) section of the GitLab EE LDAP documentation in regards to `TLS`.
+
+#### Bind DN (required)
+The full user or Distinguished Name used to authenticate (bind) to the LDAP server. Examples are 'america\\momo' or `CN=Gitlab Git,CN=Users,DC=mydomain,DC=com`
+
+#### Password
+The password used for binding to the LDAP server, should one be required by the LDAP server.
+
+#### LDAP Request Timeout (required, default)
+This integer value, in *seconds*, provides the timeout to LDAP queries. This helps to avoid blocking a request if the LDAP server were to become unresponsive. A value of `0` will disable this timeout, and `10` is provided by default.
+
+#### Active Directory
+Checkbox to determine if the LDAP server is expected to be an Active Directory server. This defaults to off, but should be checked if you are configuring an Active Directory server.
+
+#### Allow username or email login
+If `Allow username or email login` is enabled, GitLab will ignore everything after the first '@' in the LDAP username submitted by the user on login.
+
+Example:
+
+*  The user enters 'jane.doe@example.com' and 'p@ssw0rd' as LDAP credentials;
+*  GitLab queries the LDAP server with 'jane.doe' and 'p@ssw0rd'.
+
+If you are using "uid: 'userPrincipalName'" on Active Directory you need to disable this setting, because the userPrincipalName contains an '@'.
+
+#### Block Auto-created Users
+To maintain tight control over the number of active users on your GitLab installation, enable this setting to keep new users blocked until they have been cleared by the admin. This defaults to off.
+
+#### Base DN (required)
+The Distinguished Name that will act as the base for user searches. Example: `ou=People,dc=gitlab,dc=example` or `DC=mydomain,DC=com`
+
+#### User Filter
+Filter LDAP users based on attributes. See [RFC 4515](https://tools.ietf.org/search/rfc4515) for the format.
+
+Examples:
+
+*  Allow only users who have the attribute `employeeType` of `developer`: `(employeeType=developer)`
+*  Allow only specific `users`: `(&(objectclass=user)(|(samaccountname=momo)(samaccountname=toto)))`
+
+#### Attributes (required, default)
+LDAP attributes that GitLab will use to create an account for the LDAP user. The specified attribute can either be the attribute name as a string (e.g. `mail`), or a comma separated list of attribute names to try in order (e.g. `mail, email`). *Note that the user's LDAP login will always be the attribute specified as `uid` above.*
+
+**username**: Attribute's value to be used as the users canonical name in paths (`https://gitlab.example.com/username/`) and mentions (`@username`)
+**email**: Attribute's value that contains the user's email address for notifications from GitLab
+
+**name**,**first_name**,**last_name**: Attribute's value that contains the user's full name. If no full name could be found in the `name` attribute, the full name is determined from the `first_name` and `last_name` attributes.
+
+#### Groups Base DN
+The Distinguished Name for the base on which searches will be performed for groups. See `Base DN`.
+
+#### Admin Group
+The name of the group that will contain users with Admin role. *This is only the CN value, not a full Distinguished Name.* Example: `administrators`
+
+#### External User Group(s)
+List of groups containing users that should be [considered external users](https://docs.gitlab.com/ee/user/permissions.html#external-users). Example: `partners, interns`
+
+#### Enable SSH Public Key Sync
+This checkbox controls the behavior of syncing a user's public SSH key from an LDAP attribute. Defaults to off.
+
+#### Attribute for SSH Keys
+The attribute name that will contain the public ssh key of a user.
