@@ -1,7 +1,9 @@
 ---
-title: LDAP Configuration
+title: GitLab
 owner: Partners
 ---
+
+# LDAP Configuration
 
 Configuring the GitLab tile with LDAP is handled through the **LDAP** tab in the GitLab tile's settings.  
 These settings are separate from the rest of the GitLab settings due to the complexity and size of the configuration.
@@ -15,7 +17,7 @@ There are three primary points:
 You may use any [GitLab-compatible LDAP provider](https://docs.gitlab.com/ee/administration/auth/ldap.html#ldap), including Microsoft Active Directory, Apple Open Directory, Open LDAP, and 389 Server. For the purposes of this document, we write "LDAP server".
 
 When LDAP is enabled and configured successfully, you have additional forms on the Sign-In page. 
-Below is an example where the `label` field of the LDAP server setting is `LDAP`
+Below is an example where the `label` field of the LDAP server setting is `LDAP`.
 
 ![Image of Sign-in page with LDAP](ldap-signin.png)
 
@@ -55,13 +57,13 @@ Provide the LDAP attribute that will map to a user's login. In Active Directory,
 This dropdown provides selection of the connection method to the LDAP server. GitLab allows for `Plain`, `SSL`, or `TLS`. Please see the [Limitations](https://docs.gitlab.com/ee/administration/auth/ldap.html#limitations) section of the GitLab EE LDAP documentation in regards to `TLS`.
 
 #### Bind DN (required)
-The full user or Distinguished Name used to authenticate (bind) to the LDAP server. Examples are 'america\\momo' or `CN=Gitlab Git,CN=Users,DC=mydomain,DC=com`
+The full user or Distinguished Name used to authenticate (bind) to the LDAP server. Examples are `america\\momo` or `CN=Gitlab Git,CN=Users,DC=mydomain,DC=com`.
 
 #### Password
 The password used for binding to the LDAP server, should one be required by the LDAP server.
 
 #### LDAP Request Timeout (required, default)
-This integer value, in *seconds*, provides the timeout to LDAP queries. This helps to avoid blocking a request if the LDAP server were to become unresponsive. A value of `0` will disable this timeout, and `10` is provided by default.
+This integer value, in *seconds*, provides the timeout to LDAP queries. This helps to avoid blocking a request if the LDAP server were to become unresponsive. A value of `0` disables this timeout, and `10` is provided by default.
 
 #### Active Directory
 Checkbox to determine if the LDAP server is expected to be an Active Directory server. This defaults to off, but should be checked if you are configuring an Active Directory server.
@@ -111,4 +113,4 @@ List of groups containing users that should be [considered external users](https
 This checkbox controls the behavior of syncing a user's public SSH key from an LDAP attribute. Defaults to off.
 
 #### Attribute for SSH Keys
-The attribute name that will contain the public ssh key of a user.
+The attribute name that will contain the public SSH key of a user.
