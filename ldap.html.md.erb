@@ -5,7 +5,7 @@ owner: Partners
 
 # LDAP Configuration
 
-Configuring the GitLab tile with LDAP is handled through the **LDAP** tab in the GitLab tile's settings.  
+Configuring the GitLab tile with LDAP is handled through the **LDAP** tab in the GitLab tile's settings.
 These settings are separate from the rest of the GitLab settings due to the complexity and size of the configuration.
 
 There are three primary points:
@@ -16,7 +16,7 @@ There are three primary points:
 
 You may use any [GitLab-compatible LDAP provider](https://docs.gitlab.com/ee/administration/auth/ldap.html#ldap), including Microsoft Active Directory, Apple Open Directory, Open LDAP, and 389 Server. For the purposes of this document, we write "LDAP server".
 
-When LDAP is enabled and configured successfully, you have additional forms on the Sign-In page. 
+When LDAP is enabled and configured successfully, you have additional forms on the Sign-In page.
 Below is an example where the `label` field of the LDAP server setting is `LDAP`.
 
 ![Image of Sign-in page with LDAP](ldap-signin.png)
@@ -53,8 +53,16 @@ The port to which GitLab should connect to your LDAP server. This is most common
 #### UID (required)
 Provide the LDAP attribute that will map to a user's login. In Active Directory, this is commonly `sAMAccountName`, which is provided by default.
 
-#### Method (required, default)
-This dropdown provides selection of the connection method to the LDAP server. GitLab allows for `Plain`, `SSL`, or `TLS`. Please see the [Limitations](https://docs.gitlab.com/ee/administration/auth/ldap.html#limitations) section of the GitLab EE LDAP documentation in regards to `TLS`.
+#### Encryption (required, default)
+This dropdown provides selection of the encryption method used for connecting to the LDAP server. GitLab allows for `Plain`, `Start TLS` and `Simple TLS`. Please see the [Limitations](https://docs.gitlab.com/ee/administration/auth/ldap.html#limitations) section of the GitLab EE LDAP documentation in regards to `TLS`.
+
+#### Verify Certificates
+Checkbox to enable SSL certificate verification if encryption method is  "Start TLS" or "Simple TLS". (Defaults to off for backward-compatibility)
+
+### SSL Version
+Provide the SSL version for OpenSSL to use. The OpenSSL default will be used if a value is not specified.
+
+Example: 'TLSv1_1'
 
 #### Bind DN (required)
 The full user or Distinguished Name used to authenticate (bind) to the LDAP server. Examples are `america\\momo` or `CN=Gitlab Git,CN=Users,DC=mydomain,DC=com`.
