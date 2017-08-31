@@ -1,0 +1,57 @@
+---
+title: GitLab
+owner: Partners
+---
+
+# NGINX Configuration
+
+GitLab makes use of an internal NGINX as a proxy to the services inside the tile. To ensure that client IPs are presented accurately to the service components, we provide a method to add to the list of Trusted Proxies for the NGINX instance. We prepopulate the list of trusted proxies with the addresses of the Pivotal CloudFoundry GoRouter addresses as a part of the Tile, and provide a field to add additional trusted proxies that may be present as a part of the Infrastructure as a Service (IaaS) in use.
+
+![Image of NGINX settings](nginx-trusted-proxies.png)
+
+## Trusted Proxy Addresses
+
+This field accepts a comma separated list of IP addresses and [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). The values in this field should be complete 4-octet addresses, with or without CIDR notation.
+
+Examples:
+<table border="1" class="nice">
+<tr>
+  <th>Example Lists</th>
+</tr>
+<tr>
+  <td>
+  192.168.10.18
+  </td>
+</tr>
+<tr>
+  <td>
+  192.168.10.18, 10.0.16.15, 10.0.16.23
+  </td>
+</tr>
+<tr>
+  <td>
+  192.168.10.1/24, 10.0.16.15, 130.211.0.0/22
+  </td>
+</tr>
+</table>
+
+## Retreiving  Addresses from your IaaS
+
+Depending on the IaaS in use, there may be one or more additional reverse proxies between your clients external to PCF and your GitLab instances.
+
+### Google Cloud Platform
+
+As a part of the PCF installation and configuration documentation for GCP, you will have created a [Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/customizing/gcp-prepare-env.html#http_https_lb). The IP addresses of these Load Balancer instances should be added to this list. There is a [known subnet that these load balancers will be placed into (`130.211.0.0/22`)](https://cloud.google.com/compute/docs/load-balancing/http/), however you may wish to be more specific. An excerpt from Google Cloud's documentation below:
+
+> Firewall rules
+
+> You must create a firewall rule that allows traffic from 130.211.0.0/22 and 35.191.0.0/16 to reach your instances. This rule allows traffic from both the load balancer and the health checker.
+
+
+### Amazon Web Services
+
+As a part of the PCF installation and configuration documentation for AWS, you will have created a [Web Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/customizing/pcf-aws-manual-config.html#pcfaws-web-lb). Any subnet that a load balancer has been created inside should be added to the list of Trusted Proxy Addresses
+
+### vSphere
+
+As a part of the PCF installation and configuration documentation for vSphere, you will have [configured either the Pivotal HAProxy Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/opsguide/ssl-term.html) or another. The IP addresses used here should be added to the list of Trusted Proxy Addresses.
