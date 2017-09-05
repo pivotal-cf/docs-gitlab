@@ -1,0 +1,65 @@
+---
+title: GitLab
+owner: Partners
+---
+
+# NGINX Configuration
+
+GitLab makes use of an internal NGINX as a proxy to the services inside the tile. To ensure that client IPs are presented accurately to the service components, we provide a method to add to the list of Trusted Proxies for the NGINX instance. We prepopulate the list of trusted proxies with the addresses of the Pivotal CloudFoundry GoRouter addresses as a part of the Tile, and provide a field to add additional trusted proxies that may be present as a part of the Infrastructure as a Service (IaaS) in use.
+
+It is important to note that throughout this document, we're mentioning reverse proxies which is how Load Balancers route traffic to individual service instances. It is possible that your environment may have additional proxies that are not load balancers. Throughout this document, feel free to interchange 'reverse proxy' with 'load balancer'.
+
+If this information is not provided, NGINX will present the addresses of the reverse proxies as that of the client. This can result in the [RackAttack](https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-rack-attack) component of the GitLab instance behaving in a way that is in agreement with its design, but not as you intended or expected. If the addresses provided to RackAttack are that of the reverse proxies instead of the client, behaviors such as request throttling and failed authentication could occur based on the proxies and not the end client. This can result in spurious `Access Forbidden` (`HTTP 403`) reponses from the server. When properly configured so that all layers of proxies are included and trusted in these settings, these erroneous behaviors **will not occur**.
+
+![Image of NGINX settings](nginx-trusted-proxies.png)
+
+## Trusted Proxy Addresses
+
+This field accepts a comma separated list of IP addresses and [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). The values in this field should be complete 4-octet addresses, with or without CIDR notation.
+
+<table border="1" class="nice">
+<tr>
+  <th>Example Lists</th>
+</tr>
+<tr>
+  <td>
+  192.168.10.18
+  </td>
+</tr>
+<tr>
+  <td>
+  192.168.10.18, 10.0.16.15, 10.0.16.23
+  </td>
+</tr>
+<tr>
+  <td>
+  192.168.10.1/24, 10.0.16.15, 130.211.0.0/22
+  </td>
+</tr>
+</table>
+
+## Retreiving  Addresses from your IaaS
+
+Depending on the IaaS in use, there may be one or more additional reverse proxies between your clients external to PCF and your GitLab instances. The location of these reverse proxies will vary greatly between individual deployments. When collecting this information, Tile administrators will needed to collect the neccessary information from their infrastructure.
+
+### Google Cloud Platform
+
+As a part of the PCF installation and configuration documentation for GCP, you will have created a [Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/customizing/gcp-prepare-env.html#http_https_lb). The IP addresses of these Load Balancer instances should be added to this list. There is a [known subnet that these load balancers will be placed into (`130.211.0.0/22`)](https://cloud.google.com/compute/docs/load-balancing/http/), however you may wish to be more specific. An excerpt from Google Cloud's documentation is below describes the complete subnet in which all GCP load balancers will be placed:
+
+> Firewall rules
+
+> You must create a firewall rule that allows traffic from 130.211.0.0/22 and 35.191.0.0/16 to reach your instances. This rule allows traffic from both the load balancer and the health checker.
+
+The IP of the front end load balancer will also need to be collected from the GCP console. To do so, log in to the [GCP console](https://console.cloud.google.com) and select the appropriate project used to install PCF from the project drop-down. From the “Products & Services” menu on the left of the page, under the “Networking” section, select “Network services > Load balancing”. Find the load balancer in the list and click to expand the information panel underneath it’s row. In that panel, the public IP address of the load balancer is listed under the “Frontend” section.
+
+### Amazon Web Services
+
+As a part of the PCF installation and configuration documentation for AWS, you will have created a [Web Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/customizing/pcf-aws-manual-config.html#pcfaws-web-lb). Any subnet that a load balancer has been created inside should be added to the list of Trusted Proxy Addresses
+
+### vSphere
+
+As a part of the PCF installation and configuration documentation for vSphere, you will have [configured either the Pivotal HAProxy Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/opsguide/ssl-term.html) or another. The IP addresses used here should be added to the list of Trusted Proxy Addresses.
+
+### Azure
+
+Log in to the Azure portal (portal.azure.com) and select the resource group PCF was installed in. In the overview section, filter all items by type, de-select everything and select “Load Balancers”. Click on the load balancer in the results list and the public IP address is listed in the overview section.
