@@ -30,7 +30,7 @@ The required fields to be populated are the following:
 
 If the database does not exist it will be created upon installation. All database migrations are performed automatically during upgrades of the tile.
 
-![Image of OpsManager MySQL Configuration](mysql.jpeg)
+![Image of OpsManager MySQL Configuration](mysql.png)
 
 ## Redis
 The product requires an external Redis database in order to power its background processing queues.
@@ -47,7 +47,7 @@ The required fields to be populated are the following:
 * Redis port - defaults to 6379
 * Redis password
 
-![Image of OpsManager Redis Configuration](redis.jpeg)
+![Image of OpsManager Redis Configuration](redis.png)
 
 ## NFS Storage
 The product requires an NFS server to store all of the git repositories on.
@@ -70,7 +70,7 @@ The required fields to be populated are the following:
 * Hostname - can be an IP address or hostname
 * Remote path - if not specified, defaults to the root path on the share
 
-![Image of OpsManager NFS Configuration](nfs.jpeg)
+![Image of OpsManager NFS Configuration](nfs.png)
 
 ## SMTP
 An SMTP server is required in order to send e-mails to users. This is required in order for the user signup flow to work as the user is required to validate their account by clicking on the link they are sent.
@@ -90,4 +90,4 @@ Optional fields to be populated are the following:
 * Mail server domain: the domain from which the emails are sent, such as `my-pcf.example.com`
 
 
-![Image of OpsManager SMTP Configuration](smtp.jpeg)
+![Image of OpsManager SMTP Configuration](smtp.png)
