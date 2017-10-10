@@ -62,7 +62,7 @@ When collecting this information, tile administrators need to collect the necess
 
 ###<a id="gcp"></a> Google Cloud Platform
 
-As a part of the PCF installation and configuration documentation for GCP, you will have created a [Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/customizing/gcp-prepare-env.html#http_https_lb).
+As a part of the PCF installation and configuration documentation for GCP, you will have created a [Load Balancer](https://docs.pivotal.io/pivotalcf/customizing/gcp-prepare-env.html#http_https_lb).
 The IP addresses of these load balancer instances should be added to this list.
 There is a [known subnet that these load balancers will be placed into (`130.211.0.0/22`)](https://cloud.google.com/compute/docs/load-balancing/http/),
 however you might want to be more specific.
@@ -90,13 +90,13 @@ To collect the IP address of the front-end load balancer from the GCP console, d
 ### <a id="aws"></a>Amazon Web Services
 
 As a part of the PCF installation and configuration documentation for AWS,
-you created a [Web Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/customizing/pcf-aws-manual-config.html#pcfaws-web-lb).
+you created a [Web Load Balancer](https://docs.pivotal.io/pivotalcf/customizing/pcf-aws-manual-config.html#pcfaws-web-lb).
 Any subnet that a load balancer has been created inside should be added to the list of Trusted Proxy Addresses
 
 ###<a id="vsphere"></a> vSphere
 
 As a part of the PCF installation and configuration documentation for vSphere,
-you have [configured either the Pivotal HAProxy Load Balancer](https://docs.pivotal.io/pivotalcf/1-11/opsguide/ssl-term.html) or another.
+you have [configured either the Pivotal HAProxy Load Balancer](https://docs.pivotal.io/pivotalcf/opsguide/ssl-term.html) or another.
 The IP addresses used here should be added to the list of Trusted Proxy Addresses.
 
 ###<a id="azure"></a> Azure
