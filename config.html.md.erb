@@ -17,17 +17,17 @@ Defaults to `gitlab`. This route is registered against the apps domain configure
 
 ### Emails From
 
-The address to be used when sending e-mail from GitLab, such as `gitlab-no-reply@my-pcf.example.com`.
+The address to be used when sending email from GitLab, such as `gitlab-no-reply@my-pcf.example.com`.
 
 ### Emails Reply-To
 
-The reply to address to be used
+The reply-to address to be used.
 
 ### Emails Display Name
 
-A "friendly" name shown to users in their Inboxes.
+A "friendly" name shown to users in their inboxes.
 
-### Initial root password
+### Initial Root Password
 
 Password to pre-configure for the `root` user upon deployment of a new installation. This is not required, and will not be used during upgrades.
 
@@ -37,9 +37,9 @@ Checkbox for enabling Rack Attack for this deployment. Defaults to checked. Only
 
 ### SSH Extra Configuration
 
-This `text` field allows for the input of a snippet that will be appened to the `sshd_config` by OpenSSH's `sshd` used by GitLab for access via SSH. The field is _not validated_, so it is left to the user to ensure that all content is valid according to the [man(5) page for `sshd_config`](http://manpages.ubuntu.com/manpages/trusty/man5/sshd_config.5.html).
+This `text` field allows the input of a snippet that will be appened to the `sshd_config` by OpenSSH's `sshd` used by GitLab for access via SSH. The field is _not validated_, so it is left to the user to ensure that all content is valid according to the [man(5) page for `sshd_config`](http://manpages.ubuntu.com/manpages/trusty/man5/sshd_config.5.html).
 
-The intent of this field is to allow for the configuration of security parameters for the SSH daemon such as `Ciphers`, `MACs`, and `KexAlgorithms`. The default values are those currently implemented in by the Ubuntu Trusty (14.04.5 LTS) package, as seen below.
+This field allows the configuration of security parameters for the SSH daemon such as `Ciphers`, `MACs`, and `KexAlgorithms`. The default values are those currently implemented in by the Ubuntu Trusty (14.04.5 LTS) package, as seen below.
 
 ```
 Ciphers aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
