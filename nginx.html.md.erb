@@ -48,7 +48,7 @@ The values in this field should be complete 4-octet addresses, with or without C
 </tr>
 <tr>
   <td>
-  192.168.10.1/24, 10.0.16.15, 130.211.0.0/22
+  192.168.10.1/24, 10.0.16.15, 130.211.0.0/22, 35.191.0.0/16
   </td>
 </tr>
 </table>
@@ -64,7 +64,7 @@ When collecting this information, tile administrators need to collect the necess
 
 As a part of the PCF installation and configuration documentation for GCP, you will have created a [Load Balancer](https://docs.pivotal.io/pivotalcf/customizing/gcp-prepare-env.html#http_https_lb).
 The IP addresses of these load balancer instances should be added to this list.
-There is a [known subnet that these load balancers will be placed into (`130.211.0.0/22`)](https://cloud.google.com/compute/docs/load-balancing/http/),
+There are 2 [known subnets that these load balancers will be placed into (`130.211.0.0/22`, `35.191.0.0/16`)](https://cloud.google.com/compute/docs/load-balancing/http/),
 however you might want to be more specific.
 An excerpt from Google Cloud documentation below describes the complete subnet in which all GCP load balancers are placed:
 
